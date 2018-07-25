@@ -20,7 +20,7 @@ An example of the undistortion applied on the test images is also given below:
 ![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.19.49%20PM.png)
 
 ## Color and Gradient Thresholding
-After the image is undistorted, the next step is to identify the edges in the images. Lane markings are considered be thick edges, and by proper thresholding the lane markings can be easily extracted. There are 4 different thresholdings used in the lane finding algorithm used. 
+After the image is undistorted, the next step is to identify the edges in the images. Lane markings are considered to be thick edges, and by proper thresholding the lane markings can be easily extracted. There are 4 different thresholdings used in the lane finding algorithm used. 
 1. Absolute Sobel Magnitude threshold </br>
 The sobel thresholded image can be obtained with the function **cv2.Sobel**. The images have to be obtained separately for x axis and y axis. We can threshold the image based on the absolute sobel edge values and we can combine both the x and y axes to get a single binary image. 
 2. Gradient Threshold</br>
@@ -30,5 +30,14 @@ We want to detect only the lane markings and not any other information from the 
 4. Color thresholding</br>
 A lot of information can be obtained by changing the color spaces of the images. It is found that the lane markings are more easily extractable when the image is represented in the HLS color space as this color space contains the lightness as one of its parameters. The S channel is extracted and thresholded to get a identification of the lane markings. 
 
-These are the four threhsolds that were part of the pre-processing techniques for lane finding algorithm. An example of the thresholded image is given below:
+These are the four threhsolds that were part of the pre-processing techniques for lane finding algorithm. The different thresholds can be combined with different logics. The logic used here is to </br>
+[((gradx == 1) & (grady == 1)) | ((mag_binary == 1) & (dir_binary == 1))]</br>
+An example of the thresholded image is given below:
 ![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.20.06%20PM.png)
+
+## Perspective Transformation
+With the help of the thresholded image, we can find out the lane markings distinctively but we cannot identify whether the lanes are straight or curved. A straight lane marking appears curved due to the conversion from world space to image space. To correct this issue, we need to have a bird's eye view of the lane to identify whether the lane is curved or not. This is called as warping and can be easily performed with the help of the **cv2.warpPerspective** which takes in the input arguments as the image and the transform matrix. The transform matrix is obtained by passing the source and the destination points to the **cv2.getPerspectiveTransform** function. The inverse transform matrix is needed to put the lane markings back on to the original image and it can be obtained easily by just swapping the source and destination points.
+Example of the Perspective transform applied to the test images is given below:
+![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.19.57%20PM.png)
+
+
