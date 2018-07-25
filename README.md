@@ -54,4 +54,7 @@ Once the polynomials are fitted to the lane pixels, the next step is to find the
 Once the curvature is found out, we can find the vehicle position corresponding to the centre of the lane by finding the starting pixels of the lane for the left and right lines with respect to the x-axis. The mid-point of these two starting lane points will give us the vehicle position with respect to the centre of the lane. 
 
 ## Warping lane lines back to the original image
+Once the lane lines and the curvature measurements are obtained, the next step is to warp the lane lines back onto the original image so that we can visualize the image with the lane markings. The inverse perspective transform matrix is required for this step. Once the polynomial functions for the lane lines are obtained, we can use the **cv2.follpoly** function to indicate the lane regions with a specific color. Once the image containing the lane markings and the indications is obtained, inverse perspective transform can be applied and the imposed on the original image using the **cv2.addweighted** function. This is how the lane lines are marked on the original image. The lane detection algorithm applied on two of the test images is given below: 
+![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.20.25%20PM.png)
+
 
