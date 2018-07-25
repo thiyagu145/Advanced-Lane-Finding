@@ -39,5 +39,6 @@ An example of the thresholded image is given below:
 With the help of the thresholded image, we can find out the lane markings distinctively but we cannot identify whether the lanes are straight or curved. A straight lane marking appears curved due to the conversion from world space to image space. To correct this issue, we need to have a bird's eye view of the lane to identify whether the lane is curved or not. This is called as warping and can be easily performed with the help of the **cv2.warpPerspective** which takes in the input arguments as the image and the transform matrix. The transform matrix is obtained by passing the source and the destination points to the **cv2.getPerspectiveTransform** function. The inverse transform matrix is needed to put the lane markings back on to the original image and it can be obtained easily by just swapping the source and destination points.
 Example of the Perspective transform applied to the test images is given below:
 ![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.19.57%20PM.png)
-
-
+</br>
+A combination of the pre-processing techniques along with the perspective transformation applied is given below:
+![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.20.18%20PM.png)
