@@ -17,4 +17,4 @@ Camera calibration is done with the help of openCV functions. The first step is 
 ![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.19.42%20PM.png)
 
 An example of the undistortion applied on the test images is also given below:
-![alt text] (https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.19.49%20PM.png)
+![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.19.49%20PM.png)
