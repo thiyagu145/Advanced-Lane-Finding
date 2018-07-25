@@ -58,5 +58,11 @@ Once the lane lines and the curvature measurements are obtained, the next step i
 ![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-25%20at%201.47.16%20PM.png)
 
 ## Applying the lane finding algorithm on the given video
-The result of applying the advanced lane finding algorithm applied on the given video is given below:
+The result of applying the advanced lane finding algorithm applied on the given video is given in the following link:</br>
 ![Watch the video](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/project_video.mp4)
+
+## Discussion
+The main problem faced was developing the alternative function for the detecting the lane lines. In some sections of the given video, due to the shadows and the poor lighting conditions the **np.polyfit** function fails and hence the previous fit had to be used. The previous fit sometimes did not identify the lane lines exactly. To overcome this issue, the previous fits were stored and the average of the fits was considered to be the actual fit. 
+In some of the sections, the left fit and the right fit returned by the function were not correct. To check the correctness of the fits returned, a sanity check was used. In the first sanity check, the average of the sum of distance between the left and the right lane at 5 points were taken and checked with the reference value to determine correctness of the lines detected. The second sanity check was based on the difference between the slopes of the two lanes at the y-mid of the image. The second sanity check utilises the idea that the lane lines have to be parallel. 
+The algorithm works well on most of the sections of the road except on the shadows and lighting difference regions which cause the lane lines to wobble a bit. To improve this algorithm, the convolution approach to detect the lines can be used. Also, other pre-processing techniques can be used to improve the accuracy of the algorithm. 
+As challenges, we can consider images from three cameras placed on the hood of the car for a better lane finding technique. 
