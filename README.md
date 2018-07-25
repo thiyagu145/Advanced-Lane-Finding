@@ -59,4 +59,4 @@ Once the lane lines and the curvature measurements are obtained, the next step i
 
 ## Applying the lane finding algorithm on the given video
 The result of applying the advanced lane finding algorithm applied on the given video is given below:
-[![Watch the video](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/project_video.mp4)
+![Watch the video](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/project_video.mp4)
