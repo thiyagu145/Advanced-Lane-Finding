@@ -57,4 +57,6 @@ Once the curvature is found out, we can find the vehicle position corresponding 
 Once the lane lines and the curvature measurements are obtained, the next step is to warp the lane lines back onto the original image so that we can visualize the image with the lane markings. The inverse perspective transform matrix is required for this step. Once the polynomial functions for the lane lines are obtained, we can use the **cv2.follpoly** function to indicate the lane regions with a specific color. Once the image containing the lane markings and the indications is obtained, inverse perspective transform can be applied and the imposed on the original image using the **cv2.addweighted** function. This is how the lane lines are marked on the original image. The lane detection algorithm applied on two of the test images is given below: 
 ![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-25%20at%201.47.16%20PM.png)
 
-
+## Applying the lane finding algorithm on the given video
+The result of applying the advanced lane finding algorithm applied on the given video is given below:
+[![Watch the video](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/project_video.mp4)
