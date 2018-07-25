@@ -10,3 +10,6 @@ The advanced lane finding algorithm is mentioned below:
 * Determine the curvature of the lane and vehicle position with respect to center.
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
+
+## Camera Calibration
+Camera calibration is done with the help of openCV functions. The first step is to create an empty array for image points(2d points in 
