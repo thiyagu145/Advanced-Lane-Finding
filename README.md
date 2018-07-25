@@ -42,3 +42,9 @@ Example of the Perspective transform applied to the test images is given below:
 </br>
 A combination of the pre-processing techniques along with the perspective transformation applied is given below:
 ![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-24%20at%207.20.18%20PM.png)
+
+## Detecting Lane Pixels
+After the pre-processing techniques are applied, we have the warped thresholded image which give us a clear visualization of the lanes. The next step is to identify the lane pixels from the warped images and fit them with the polynomial to draw the lane lines over these pixels. The histogram with respect to the number of pixels and x-axis location are obtained and where the peaks are high, those regions are considered to be lines. Once the peaks are identified, all the pixels corresponding to these peaks are taken and their coordinates are used to find the best polynomial corresponding these lane markings. Once the polynomial functions for the left and the right lane are identified, the lines can be drawn over the lane pixels to show them on the original images. The following example shows the warped-thresholded image and the polynomial fitted on the thresholded image.
+![alt text](https://github.com/thiyagu145/Advanced-Lane-Finding/blob/master/output_images/Screen%20Shot%202018-07-25%20at%2012.36.58%20PM.png)
+
+
