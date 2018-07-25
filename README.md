@@ -21,13 +21,13 @@ An example of the undistortion applied on the test images is also given below:
 
 ## Color and Gradient Thresholding
 After the image is undistorted, the next step is to identify the edges in the images. Lane markings are considered be thick edges, and by proper thresholding the lane markings can be easily extracted. There are 4 different thresholdings used in the lane finding algorithm used. 
-1. Absolute Sobel Magnitude threshold
+1. Absolute Sobel Magnitude threshold </br>
 The sobel thresholded image can be obtained with the function **cv2.Sobel**. The images have to be obtained separately for x axis and y axis. We can threshold the image based on the absolute sobel edge values and we can combine both the x and y axes to get a single binary image. 
-2. Gradient Threshold
+2. Gradient Threshold</br>
 The previous threshold was based completely on the absolute values, but in gradient threshold we can threshold the image based on the gradient of the edge detected image. 
-3. Direction threshold
+3. Direction threshold</br>
 We want to detect only the lane markings and not any other information from the image. Since we know that the edges containing information about the lane markings will definitely belong to a range of particular angles. We need edges that oriented towards the y axis and this can be obtained by thresholding the image based on the edge angle using the sobel x and y images.
-4. Color thresholding
+4. Color thresholding</br>
 A lot of information can be obtained by changing the color spaces of the images. It is found that the lane markings are more easily extractable when the image is represented in the HLS color space as this color space contains the lightness as one of its parameters. The S channel is extracted and thresholded to get a identification of the lane markings. 
 
 These are the four threhsolds that were part of the pre-processing techniques for lane finding algorithm. An example of the thresholded image is given below:
